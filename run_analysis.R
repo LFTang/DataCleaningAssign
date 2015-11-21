@@ -41,3 +41,7 @@ total <- cbind(subject, y, X.selected)
 
 #Group and summarize
 summary <- total %>% group_by(Subject, Activity) %>% summarize_each(funs(mean), -1, -2)
+
+setwd("~/R/DataCleaningAssign")
+write.table(summary,file = "summary.txt")
+

@@ -1,9 +1,3 @@
----
-title: "Readme"
-output: html_document
----
-
-
 Running the script
 ============================
 1. Download the data from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 

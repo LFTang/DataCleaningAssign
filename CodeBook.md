@@ -1,8 +1,3 @@
----
-title: "CodeBook"
-output: html_document
----
-
 Original Database
 =============================================
 

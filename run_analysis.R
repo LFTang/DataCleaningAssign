@@ -31,7 +31,7 @@ names(y) <- c("Activity")
 rm(subject_train, subject_test, X_train, X_test, y_train, y_test)
 
 #<Objective 2>select X to include only mean/std related columns
-X.selected <-X [,grep("mean|std",features$feature,ignore.case = TRUE)]
+X.selected <-X [,grep("mean\\(\\)|std\\(\\)",features$feature,ignore.case = TRUE)]
 
 #Change activity data y$V1 (1:5) to factor names ("WALKING",..."STANDING"...)
 y$Activity<-factor(y$Activity,labels = activity$label)
@@ -40,7 +40,7 @@ y$Activity<-factor(y$Activity,labels = activity$label)
 total <- cbind(subject, y, X.selected)
 
 #Group and summarize
-summary <- total %>% group_by(Subject, Activity) %>% summarize_each(funs(mean), -1, -2)
+summary <- total %>% group_by(Subject, Activity) %>% summarize_each(funs(mean))
 
 setwd("~/R/DataCleaningAssign")
 write.table(summary,file = "summary.txt")
